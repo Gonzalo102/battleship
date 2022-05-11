@@ -1,0 +1,24 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Ship.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gonzalo102/battleship.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gonzalo102/battleship/issues"
+  },
+  "homepage": "https://github.com/Gonzalo102/battleship#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.17.10",
+    "jest": "^28.1.0"
+  }
+}
