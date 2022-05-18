@@ -19,7 +19,7 @@ export class Player {
       rndRow = this.randomIntFromInterval(0, 6);
       rndCol = this.randomIntFromInterval(0, 6);
     }
-    userGameboard.receiveAttack(rndRow, rndRow);
+    userGameboard.receiveAttack(rndRow, rndCol);
     this.alreadyHitCoords[rndRow][rndCol] = true;
   }
 
