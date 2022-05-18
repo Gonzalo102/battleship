@@ -65,7 +65,7 @@ export class Gameboard {
     } else {
       //got a hit
       const shipHit = this.getShip(this.board[row][col]);
-      //determinates position hit
+      //determinate position hit
       let position = -1;
       for (let i = 0; i <= row; i++) {
         for (let j = 0; j <= col; j++) {
