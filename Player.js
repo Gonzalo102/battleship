@@ -13,13 +13,14 @@ export class Player {
   }
 
   randomShot(userGameboard) {
-    let rndRow = randomIntFromInterval(0, 6);
-    let rndCol = randomIntFromInterval(0, 6);
+    let rndRow = this.randomIntFromInterval(0, 6);
+    let rndCol = this.randomIntFromInterval(0, 6);
     while (this.alreadyHitCoords[rndRow][rndCol] === true) {
-      rndRow = randomIntFromInterval(0, 6);
-      rndCol = randomIntFromInterval(0, 6);
+      rndRow = this.randomIntFromInterval(0, 6);
+      rndCol = this.randomIntFromInterval(0, 6);
     }
     userGameboard.receiveAttack(rndRow, rndRow);
+    this.alreadyHitCoords[rndRow][rndCol] = true;
   }
 
   randomIntFromInterval(min, max) {
