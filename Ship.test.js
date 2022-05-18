@@ -11,6 +11,7 @@ test("Can_I_create_a_carrier_ship", () => {
   carrier.hit(2);
   carrier.hit(3);
   carrier.hit(4);
+  expect(() => carrier.hit(5)).toThrow(Error);
   expect(carrier.isSunk()).toBe(true);
   expect(carrier.hits).toEqual(["hit", "hit", "hit", "hit", "hit"]);
 });
