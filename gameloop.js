@@ -19,16 +19,13 @@ function gameLoop() {
   ) {
     if (round % 2 === 0) {
       //user turn
-      for (let i = 0; i < 7; i++) {
-        for (let j = 0; j < 7; j++) {
-          user.attack(i, j, computerGameboard);
-        }
-      }
+      user.randomShot(computerGameboard);
     } else {
       //computer turn
       computer.randomShot(userGameboard);
     }
-
+    let gameOver = computerGameboard.isGameOver();
+    if (gameOver) break;
     round++;
   }
 
