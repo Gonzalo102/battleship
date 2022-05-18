@@ -1,11 +1,11 @@
-class Player {
+export class Player {
   constructor(name) {
     this.name = name;
     this.alreadyHitCoords = [...Array(7)].map((e) => Array(7).fill(false));
   }
 
   attack(row, col, computerGameboard) {
-    if (alreadyHitCoords[row][col] === true) {
+    if (this.alreadyHitCoords[row][col] === true) {
       throw new Error("Try another spot, you have already tried there");
     }
     computerGameboard.receiveAttack(row, col);
