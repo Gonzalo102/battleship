@@ -94,14 +94,6 @@ test("can_I_get_a_ship_on_the_board", () => {
 test("is_game_over", () => {
   const gameboard = new Gameboard(7, 7);
 
-  gameboard.ships = [
-    new Ship("carrier", 5),
-    new Ship("battleship", 4),
-    new Ship("cruiser", 3),
-    new Ship("submarine", 3),
-    new Ship("destroyer", 2),
-  ];
-
   gameboard.placeShip(gameboard.ships[0], 1, 1, false);
   expect(gameboard.board).toEqual([
     ["", "", "", "", "", "", ""],
@@ -159,9 +151,9 @@ test("is_game_over", () => {
   ]);
 
   gameboard.receiveAttack(0, 0);
-  gameboard.receiveAttack(0, 1);
-  gameboard.receiveAttack(0, 2);
-  gameboard.receiveAttack(0, 3);
+  gameboard.receiveAttack(1, 0);
+  gameboard.receiveAttack(2, 0);
+  gameboard.receiveAttack(3, 0);
 
   expect(gameboard.ships[1].isSunk()).toBe(true);
 
@@ -185,9 +177,9 @@ test("is_game_over", () => {
 
   expect(gameboard.ships[3].isSunk()).toBe(true);
 
-  gameboard.ships[3].hit(0);
+  gameboard.ships[4].hit(0);
   expect(gameboard.isGameOver()).toBe(false);
-  gameboard.ships[3].hit(1);
+  gameboard.ships[4].hit(1);
 
   expect(gameboard.ships[3].isSunk()).toBe(true);
 
